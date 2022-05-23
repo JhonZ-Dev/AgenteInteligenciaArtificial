@@ -1,5 +1,5 @@
 # Creamos una funcion que permite definir un bloque de código reutilizable que se puede ejecutar muchas veces dentro de tu programa.
-def robot():
+def robotDeRiego():
 
     # El robot completa el objetivo si todos los lotes estan regados
     estadoObjetivo = {'A': '0', 'B':  '0', 'C': '0'}
@@ -270,6 +270,17 @@ def robot():
                 print("|------------------------------------|")
                 print("Costo actualizado:   " + str(costo)) #Se muestra por pantalla la actualizacion del costo
 
+            else:
 
+                print("Lote A ya está regado") #Se muestra por pantalla que el lote A ya esta regado
+                print("Lote C ya esta regado") #Se muestra por pantalla que el lote C ya esta regado
 
+    #Motsramos por pantalla la finalzacin del programa
+    print("OBJETIVO DEL ESTADO ES:      " ) #Se muestra  por pantalla que el objetivo del estado es 
+    print(estadoObjetivo) #Se muestra por pantalla el valor que tiene el estadoObjetivo
+    print("La medida de desempeño es:   ") #Se muestra por pantalla la medida de desempeño
+    print(costo) #Se imprimi el valor de la variable costo.
+
+#Finalizamos el programa
+robotDeRiego() 
 
