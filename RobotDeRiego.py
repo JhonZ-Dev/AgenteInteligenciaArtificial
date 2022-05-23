@@ -220,9 +220,55 @@ def robot():
                 print("|------------------------------------|")
                 print("|------------------------------------|")
 
-    #Aqui empieza la preogramacion para el LOTE C   
+    #Aqui empieza la preogramacion para el LOTE C 
+                if estadoLoteB == '1':
+                    print("El lote:     " + "B" +     " esta seco")  #Se concatea y se muestra por teclado que el lote B esta seco
+                    print("-------Moviendose a la ubicación    " +  "C"   + "-------------")
+                    costo += 1 #aumento del costo del riego
+                    print("El valor actual es:  "   +   str(costo)) #Se muestra el costo total con el tipo de dato String
+                    print("|------------------------------------|") #se muestra en pantalla que el lote B esta regado
+                    print("| ***********Lote B regado***********|") 
+                    print("|------------------------------------|")
+                    print("|------------------------------------|")
+                else: 
+                    print("Ninguna accion que realizar"   +  str(costo)) #Se muestra por pantalla que el robot no ha realizado alguna accion y  el costo se mantiene igual 
+                    print("El valor del costo es:   " + str(costo)) #Se muestra por pantalla el valor del costo
+                    print("Ubicacion A y B ya están regadas.") #Se muestra por pantalla que la Ubicacion A y B estan regadas  
 
 
+        if estadoDelLoteC == '0':
+            print("El lote C ya esta regado") #Se muestra por pantalla que el lote C ya esta regado
+            if estadoLoteA == '1': #Si el usuario digita 1 se ejecuta el siguiente bloque de codigo
+                print("****Lote A esta seco*******") #Se muestra por pantalla que el lote esta seco 
+                print("") #Realiza un salto de linea
+                print("") #Realiza un salto de linea
+                print("") #Realiza un salto de linea
+                print("*****Regando el lote A") #Se muestra por pantalla que se ha regado el lote A
+                costo +=1 #incrementa el costo al ir a regar
+                print("El valor del costo actual es:    "+  str(costo)) #Se muestra por pantalla el valor del costo actual y concatena la variable costo
+                #Despues de regar cambia de estado
+                estadoObjetivo['A'] = '0'#El estado A es igual a cero, por aquello este lote esta regado
+                costo += 1 #incrementa el costo al ir a regar
+                print("|------------------------------------|") #Se muestra por pantalla que el lote A se ha regalado
+                print("| **********Lote A regado************|") 
+                print("|------------------------------------|")
+                print("|------------------------------------|")
+                print("Costo actualizado:   " + str(costo)) #Se realiza la actualizacion del costo
+                print("") #Realiza un salto de linea
+                print("")
+                print("")
+                if estadoLoteB == '1': #Es un condicional, si el estado de Lote B es igual a 1 se ejecutara el siguiente codigo
+                    print("****Lote B es seco") #Se muestra por pantalla que el Lote B esta seco
+                    costo +=1 #incrementa el costo al ir a regar
+                    print("El valor del costo actual es:    "+  str(costo)) #Se muestra en pantalla el valor del costo actual
+                    #Despues de regar cambia de estado
+                estadoObjetivo['B'] = '0' #El estado B es igual a cero, por aquello este lote esta regado
+                costo += 1 #incrementa el costo al ir a regar
+                print("|------------------------------------|") #Se muestra por pantalla que el lote B esta regado
+                print("| ***********Lote B regado***********|") 
+                print("|------------------------------------|")
+                print("|------------------------------------|")
+                print("Costo actualizado:   " + str(costo)) #Se muestra por pantalla la actualizacion del costo
 
 
 
