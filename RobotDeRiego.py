@@ -62,3 +62,46 @@ def robot():
                 else:
                     print("**********Ninguna accion que realizar**********")
                     print("El valor del costo actual es:  " + str(costo))
+
+        if estadoDelLoteA == '0': #Si estado del lote es 0=regado
+            print("***El lote A ya está regado: ESTADO = 0") #Le dice al usuario que ya regado
+            if estadoLoteB == '1': #Si el estado del lote B es 1 siginifica que esta seco
+                print("-----Ubicacion B esta seco--------")#Muestra que esta seco
+                print("")
+                print("")
+                print("")
+                print("*****Regando el lote B*******") #Simula que riega el lote B
+                costo +=1 #incrementa el costo al ir a regar
+                print("El valor del costo actual es:    "+  str(costo))
+               #Despues de regar cambia de estado
+                estadoObjetivo['B'] = '0' #Cambia de estado a regado
+                costo += 1
+                print("|------------------------------------|") 
+                print("| -------- Lote B regado-------------|") 
+                print("|------------------------------------|")
+                print("|------------------------------------|")
+                print("Costo actualizado:   " + str(costo)) #Actualizamos el valor del costo
+                print("")
+                print("")
+                print("")
+                if estadoLoteC == '1':
+                    #Si estado del lote C es igual a 1 
+                    print("-----Ubicacion C esta seco--------") #imrprime que el lote esta seco
+                    print("*** Regando el lote********")
+                    costo +=1 #incrementa el costo al ir a regar
+                    print("El valor del costo actual es:    "+  str(costo)) #imprimimos el costo
+                    #Despues de regar cambia de estado
+                    estadoObjetivo['C'] = '0'
+                    costo += 1 #variable die que el costo aumentará
+                    print("|------------------------------------|") 
+                    print("| -------- Lote C regado ------------|") #Muestra un mensaje diciendo que el lote ya ha sido regado
+                    print("|------------------------------------|")
+                    print("|------------------------------------|")
+                    print("Costo actualizado:   " + str(costo))
+                else:      #Caso contrario si el usuario dijita si el lote B y C estan regados
+                    print("Ninguna accion que realizar"   +  str(costo)) #como todos estan regados no hay nada que hacer
+                    print("El valor del costo es:   " + str(costo)) #imprimimos el valor del costo
+                    print("Ubicacion B y C ya están regadas.") #Muestra el mensaje que ya estan regados
+
+                
+
