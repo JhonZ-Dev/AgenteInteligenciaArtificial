@@ -176,30 +176,52 @@ def robot():
                 print("")
                 print("")
                 if estadoLoteC == '1':
-                    print("****LOTE C ESTA SECO")
+                    print("****Lote C esta seco")
                     costo +=1 #incrementa el costo al ir a regar
                     print("El valor del costo actual es:    "+  str(costo))
                     #Despues de regar cambia de estado
-                    estadoObjetivo['C'] = '0'
+                    estadoObjetivo['C'] = '0' #Lote C una vez regado cambia de estado
                     costo += 1
                     print("|------------------------------------|") 
-                    print("| ***********LOTE C REGADO***********|") 
+                    print("| ***********Lote C regado***********|") #Simula que ya regó el lote
                     print("|------------------------------------|")
                     print("|------------------------------------|")
                     print("Costo actualizado:   " + str(costo))
+
+            # En caso que el usuario digite el estado 0 le mostrará que los lotes estan regados
             else:
 
                 print("Lote A ya está regado")
                 print("Lote C ya esta regado") 
 
-
+        #Comienzo de la programacion para el Lote 3 = C
     elif ubicacionLote == 'C':
 
-        print("---- Estimado usuario el robot se encuentra en la ubicacion C  ---")
-        estadoDelLoteC = input("Digite el estado del lote:   "  + ubicacionLote)
-        estadoLoteA = input("Digite el estado del lote A:    ")
-        estadoLoteB = input("Digite el estado del lote C:    ")
-        print("El valor del costo es actual es:   " + str(costo))            
+        print("---- Estimado usuario el robot se encuentra en la ubicacion C  ---") #Usuario digita la opcion
+        estadoDelLoteC = input("Digite el estado del lote:   "  + ubicacionLote) #Digitará el estado en que se encuentra el lote C
+        estadoLoteA = input("Digite el estado del lote A:    ") #Digita el estado del lote A
+        estadoLoteB = input("Digite el estado del lote C:    ") #Digita el estado del lote C
+        print("El valor del costo es actual es:   " + str(costo))   #Digita el valor del costo actual
+
+        if estadoDelLoteC == '1':
+            print("*******Lote C esta seco") #Le dice al usuario que esta seco la opcion que eligio 
+            print("*******Regando el lote ************") #Simula que esta regando el lote
+            estadoObjetivo['C'] = '0' #Cambia de estado 
+            print("Lote " + ubicacionLote  + ' totalmente regado') #Le dice al usuario que acabo de regar
+            costo += 1 #Aumenta el costo
+            print("Valor del costo  =  "    + str(costo)) #El valor del costo aumentará
+            if estadoLoteA == '1':#PARA EL LOTE A
+                print("El lote:   " +   'A'    +    "   esta seco")
+                print("****Regando lote A ******")
+                costo += 1 #aumento del costo del riego
+                print("El valor actual es:  "   +   str(costo))
+                print("|------------------------------------|") 
+                print("| ***********Lote A regado***********|") 
+                print("|------------------------------------|")
+                print("|------------------------------------|")
+
+    #Aqui empieza la preogramacion para el LOTE C   
+
 
 
 
